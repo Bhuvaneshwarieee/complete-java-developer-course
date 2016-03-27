@@ -1,0 +1,31 @@
+package com.mlregal;
+
+/**
+ * Created by miche on 3/24/2016.
+ */
+public class DeluxeBurger extends Hamburger {
+    private Addition [] additions = new Addition[2];
+    private double currentPrice;
+
+    public DeluxeBurger(Bun rollType, Meat meat) {
+        super(rollType, meat);
+        this.currentPrice = getBasePrice() + 3.0 + meat.getAddOnPrice();
+        this.additions[0] = new Addition("Drink",0.0);
+        this.additions[1] = new Addition("Chips",0.0);
+    }
+
+    @Override
+    public void addItem(Addition addition) {
+
+    }
+
+    @Override
+    public Addition getAdditions(int i) {
+        return additions[i];
+    }
+
+    @Override
+    public double getCurrentPrice() {
+        return currentPrice;
+    }
+}
