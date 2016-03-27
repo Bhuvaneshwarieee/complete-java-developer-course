@@ -1,0 +1,50 @@
+package com.mlregal;
+
+/**
+ * Created by miche on 3/24/2016.
+ */
+public class HealthyBurger extends Hamburger {
+
+    private Addition[] additions = new Addition[6];
+    private double currentPrice;
+
+    public HealthyBurger(Meat meat) {
+        super(new Bun("Brown Rye Bread",0.0), meat);
+        currentPrice = getBasePrice() + 2.0 + meat.getAddOnPrice();
+    }
+
+    @Override
+    public void addItem(Addition addition) {
+        if (this.additions[0] == null) {
+            this.additions[0] = addition;
+            currentPrice += addition.addOnPrice;
+        } else if (this.additions[1] == null) {
+            this.additions[1] = addition;
+            currentPrice += addition.addOnPrice;
+        } else if (this.additions[2] == null) {
+            this.additions[2] = addition;
+            currentPrice += addition.addOnPrice;
+        } else if (this.additions[3] == null) {
+            this.additions[3] = addition;
+            currentPrice += addition.addOnPrice;
+        } else if (this.additions[4] == null) {
+            this.additions[4] = addition;
+            currentPrice += addition.addOnPrice;
+        } else if (this.additions[5] == null) {
+            this.additions[5] = addition;
+            currentPrice += addition.addOnPrice;
+        } else {
+            System.out.println("No more add ons available for this burger.");
+        }
+    }
+
+    @Override
+    public double getCurrentPrice() {
+        return currentPrice;
+    }
+
+    @Override
+    public Addition getAdditions(int i) {
+        return additions[i];
+    }
+}
