@@ -1,0 +1,22 @@
+package com.mlregal;
+
+/**
+ * Created by miche on 3/16/2016.
+ */
+public class Meat {
+    String meatType;
+    double addOnPrice;
+
+    public Meat(String meatType, double addOnPrice) {
+        this.meatType = meatType;
+        this.addOnPrice = addOnPrice;
+    }
+
+    public String getMeatType() {
+        return meatType;
+    }
+
+    public double getAddOnPrice() {
+        return addOnPrice;
+    }
+}
