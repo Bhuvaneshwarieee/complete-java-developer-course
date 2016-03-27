@@ -1,0 +1,22 @@
+package com.mlregal;
+
+/**
+ * Created by miche on 3/16/2016.
+ */
+public class Bun {
+    String bunType;
+    double addOnPrice;
+
+    public Bun(String bunType, double addOnPrice) {
+        this.bunType = bunType;
+        this.addOnPrice = addOnPrice;
+    }
+
+    public String getBunType() {
+        return bunType;
+    }
+
+    public double getAddOnPrice() {
+        return addOnPrice;
+    }
+}
