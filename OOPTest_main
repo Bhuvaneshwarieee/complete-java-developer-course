@@ -1,0 +1,85 @@
+package com.mlregal;
+
+public class Main {
+
+    public static void main(String[] args) {
+	    // The purpose of the application is to help a fictitious company called Bill's Burders to manage
+        // their process of selling hamburgers.
+        // Our application will help bill select types of burgers, come of the additional items (additions to
+        // be added to the burgers and the pricing
+        // We want to create a basic hamburger, but also two other types of hamburgers that are popular in Bills
+        // store.
+        // The basic hamburger should have teh following items:
+        // bread roll type, meat, and up to four additions (lettuce, tomato, carrot, etc.)
+        // the customer can select to be added to the burger. Each one of these items gets charged and additional
+        // price, so you need some way to track how many items got added and to calculate the price (for the base
+        // burger and all the additions).
+        // THis burger has a base price and all the additions are seperately priced.
+        // Create a Hamburger class to deal with the above.
+        // The constructor should only include roll type, meat, and price.
+        // Also create two extra varieties of Hamburgers (classes) to cater for
+        // a) Healthy burger (on a brown rye bread roll), plus two additional items can be added.
+        // the healthy burger can have a total of 6 additions
+        // hint: you probably want to process the 2 addiitonal items in this new class, not the base class
+        // singe the 2 additiona are only appropriate for this class
+        // b) Delux hamburger - comes with chips and drinks as additions, but no extra additiona are allowed
+        // hint - You have to find a way to automatically add these new additions at the time the deluxe burger
+        // object is created, then prevent other additions being made.
+        // All 3 classes should have a method that can be called at any time to show the base price of the hamburger
+        // plus all additionals, each showing addition name, and addition price, and grand total for the burger.
+        // for the two additional classes, this may require you to be looking at the base class for pricing and then
+        // adding totals onto that.
+
+        // Hamburger test
+        Hamburger burger = new Hamburger(new Bun("English Muffin",0.75), new Meat("Bison",1.00));
+        System.out.println("Burger with " + burger.getRollType().getBunType() + " bun and " +
+                burger.getMeat().getMeatType() + " meat " + "/n" + "Base Price: " + burger.getBasePrice() +
+                "Current Price: " + burger.getCurrentPrice());
+        burger.addItem(new Addition("Fries",1.00));
+        System.out.println("New addon: " + burger.getAdditions(0).addition + "\n" +
+                "Current Price: " + burger.getCurrentPrice());
+        burger.addItem(new Addition("Cheese",0.50));
+        System.out.println("New addon: " + burger.getAdditions(1).addition + "\n" +
+                "Current Price: " + burger.getCurrentPrice());
+        burger.addItem(new Addition("Onions",0.25));
+        System.out.println("New addon: " + burger.getAdditions(2).addition + "\n" +
+                "Current Price: " + burger.getCurrentPrice());
+        burger.addItem(new Addition("Pickles",0.25));
+        System.out.println("New addon: " + burger.getAdditions(3).addition + "\n" +
+                "Current Price: " + burger.getCurrentPrice());
+        
+        // Creat Healthy Burger
+        HealthyBurger goodBurger = new HealthyBurger(new Meat("Turkey",1.50));
+        System.out.println("Healthy Burger with " + goodBurger.getRollType().getBunType() + " bun and " +
+                goodBurger.getMeat().getMeatType() + " meat " + "\n" + "Base Price: " + goodBurger.getBasePrice() +
+                "\nCurrent Price: " + goodBurger.getCurrentPrice());
+        goodBurger.addItem(new Addition("Fries",1.00));
+        System.out.println("New addon: " + goodBurger.getAdditions(0).addition + "\n" +
+                "Current Price: " + goodBurger.getCurrentPrice());
+        goodBurger.addItem(new Addition("Cheese",0.50));
+        System.out.println("New addon: " + goodBurger.getAdditions(1).addition + "\n" +
+                "Current Price: " + goodBurger.getCurrentPrice());
+        goodBurger.addItem(new Addition("Onions",0.25));
+        System.out.println("New addon: " + goodBurger.getAdditions(2).addition + "\n" +
+                "Current Price: " + goodBurger.getCurrentPrice());
+        goodBurger.addItem(new Addition("Pickles",0.25));
+        System.out.println("New addon: " + goodBurger.getAdditions(3).addition + "\n" +
+                "Current Price: " + goodBurger.getCurrentPrice());
+        goodBurger.addItem(new Addition("Soda",1.00));
+        System.out.println("New addon: " + goodBurger.getAdditions(4).addition + "\n" +
+                "Current Price: " + goodBurger.getCurrentPrice());
+        goodBurger.addItem(new Addition("Mayo",0.25));
+        System.out.println("New addon: " + goodBurger.getAdditions(5).addition + "\n" +
+                "Current Price: " + goodBurger.getCurrentPrice());
+
+        //Create Deluxe Burger
+        DeluxeBurger deluxeBurger = new DeluxeBurger(new Bun("White",0.0),new Meat("Angus Prime",1.00));
+        System.out.println("Delux Burger with " + deluxeBurger.getRollType().getBunType() + " bun and " +
+                deluxeBurger.getMeat().getMeatType() + " meat with add ons: " + deluxeBurger.getAdditions(0).addition + " and " + deluxeBurger.getAdditions(1).addition + "\n" + "Base Price: " + deluxeBurger.getBasePrice() +
+                "\nCurrent Price: " + deluxeBurger.getCurrentPrice());
+
+
+
+
+    }
+}
