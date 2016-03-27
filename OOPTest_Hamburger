@@ -1,0 +1,58 @@
+package com.mlregal;
+
+/**
+ * Created by miche on 3/16/2016.
+ */
+public class Hamburger {
+    private Bun rollType;
+    private Meat meat;
+    private double basePrice;
+    private double currentPrice;
+    private Addition[] additions = new Addition[4];
+
+    public Hamburger(Bun rollType, Meat meat) {
+        this.rollType = rollType;
+        this.meat = meat;
+        this.basePrice = 5.00;
+        this.currentPrice = this.basePrice + this.meat.getAddOnPrice() + this.rollType.getAddOnPrice();
+    }
+
+    public void addItem(Addition addition) {
+        if (this.additions[0] == null) {
+            this.additions[0] = addition;
+            currentPrice += addition.addOnPrice;
+        } else if (this.additions[1] == null) {
+            this.additions[1] = addition;
+            currentPrice += addition.addOnPrice;
+        } else if (this.additions[2] == null) {
+            this.additions[2] = addition;
+            currentPrice += addition.addOnPrice;
+        } else if (this.additions[3] == null) {
+            this.additions[3] = addition;
+            currentPrice += addition.addOnPrice;
+        } else {
+            System.out.println("No more add ons available for this burger.");
+        }
+    }
+
+    public Bun getRollType() {
+        return rollType;
+    }
+
+    public Meat getMeat() {
+        return meat;
+    }
+
+    public double getBasePrice() {
+        return basePrice;
+    }
+
+    public Addition getAdditions(int i) {
+        return additions[i];
+    }
+
+    public double getCurrentPrice() {
+        return currentPrice;
+    }
+
+}
