@@ -1,0 +1,22 @@
+package com.mlregal;
+
+/**
+ * Created by miche on 3/16/2016.
+ */
+public class Addition {
+    String addition;
+    double addOnPrice;
+
+    public Addition(String addition, double addOnPrice) {
+        this.addition = addition;
+        this.addOnPrice = addOnPrice;
+    }
+
+    public String getAddition() {
+        return addition;
+    }
+
+    public double getAddOnPrice() {
+        return addOnPrice;
+    }
+}
